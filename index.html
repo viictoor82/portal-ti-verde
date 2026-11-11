@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TI Verde | Tecnologia e Meio Ambiente</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         CABEÇALHO E MENU DE NAVEGAÇÃO
+    ======================================== -->
+
+    <header>
+        <div class="nav">
+
+            <div class="brand">
+                ◉ TI VERDE
+                <span style="font-size: 11px; color: #b8d9c5;">
+        
+                </span>
+            </div>
+
+            <nav class="navlinks">
+                <a href="#inicio">Início</a>
+                <a href="#coleta">Pontos de coleta</a>
+                <a href="#jogo">Jogo</a>
+                <a href="#ranking">Ranking</a>
+                <a href="#equipe">Equipe</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ========================================
+             1. PÁGINA INICIAL
+        ======================================== -->
+
+        <div class="hero" id="inicio">
+            <div class="wrap">
+
+                <div class="eyebrow">
+                    Projeto de extensão • Tecnologia e meio ambiente
+                </div>
+
+                <h1>
+                    O custo da era digital começa nas nossas escolhas.
+                </h1>
+
+                <p class="lead">
+                    Você sabe o que acontece quando salva um arquivo na nuvem ou descarta um celular antigo? A tecnologia faz parte da nossa rotina, mas também gera impactos no meio ambiente.
+                    <br>
+                    Descubra como pequenas mudanças nos nossos hábitos podem ajudar a reduzir esses impactos. Aprenda, participe e coloque seus conhecimentos à prova no nosso desafio TI Verde!
+                </p>
+
+                <div class="buttons">
+                    <a class="btn" href="#jogo">
+                        Jogar agora →
+                    </a>
+
+                    <a class="btn secondary" href="#coleta">
+                        Onde descartar
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- ========================================
+             3. PONTOS DE COLETA EM MACEIÓ
+        ======================================== -->
+
+        <section class="muted" id="coleta">
+            <div class="wrap">
+
+                <div class="eyebrow">
+                    Maceió • Alagoas
+                </div>
+
+                <h2>
+                    Onde descartar seus eletrônicos?
+                </h2>
+
+                <p>
+                    Celulares, baterias, carregadores e computadores
+                    não devem ir para o lixo comum.
+
+                    Para eletrônicos pequenos, consulte a logística
+                    reversa do fabricante ou um ponto especializado.
+
+                    Os ecopontos municipais abaixo recebem, entre
+                    outros resíduos, eletrodomésticos inservíveis;
+                    confirme antes de levar baterias e eletrônicos pequenos.
+                </p>
+
+                <!-- Locais inseridos pelo JavaScript -->
+                <div class="locations" id="locations"></div>
+
+                <div class="notice">
+
+                    <strong>Antes de sair:</strong>
+
+                    confirme o recebimento do material específico com
+                    a Alurb.
+
+                    A página oficial informa funcionamento diário
+                    das 6h às 18h.
+
+                    <a
+                        href="https://maceio.al.gov.br/p/alurb/ecopontos"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        Confira os endereços atualizados na Prefeitura
+                    </a>.
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ========================================
+             4. JOGO: MISSÃO TI VERDE
+        ======================================== -->
+
+        <section id="jogo">
+            <div class="wrap">
+
+                <div class="eyebrow">
+                    Desafio interativo
+                </div>
+
+                <h2>Missão TI Verde</h2>
+
+                <p>
+                    Cada equipe responde às mesmas 10 perguntas.
+
+                    A pontuação considera acertos e rapidez.
+
+                    Os resultados aparecem no ranking compartilhado
+                    entre os celulares.
+                </p>
+
+                <div class="gamebox">
+
+
+                    <!-- 4.1 Cadastro da equipe -->
+
+                    <div id="setup">
+
+                        <h3>Preparar equipe</h3>
+
+                        <p>
+                            Escolha um nome para sua equipe e comece
+                            o desafio. Cada equipe deve jogar uma vez.
+                        </p>
+
+                        <div class="field">
+
+                            <label for="team">
+                                Nome da equipe
+                            </label>
+
+                            <input
+                                id="team"
+                                maxlength="35"
+                                placeholder="Ex.: Guardiões Verdes"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <button class="btn" id="start">
+                            Iniciar desafio →
+                        </button>
+
+                        <p id="setupError" role="alert"></p>
+
+                    </div>
+
+
+                    <!-- 4.2 Tela das perguntas -->
+
+                    <div id="play" class="hidden">
+
+                        <!-- Pontuação e cronômetro -->
+                        <div class="stats">
+                            <span id="progress"></span>
+                            <span id="clock" aria-live="polite"></span>
+                            <span id="points"></span>
+                        </div>
+
+                        <!-- Barra de progresso -->
+                        <div class="bar">
+                            <div id="bar"></div>
+                        </div>
+
+                        <!-- Pergunta atual -->
+                        <div class="question" id="question"></div>
+
+                        <!-- Alternativas -->
+                        <div class="options" id="options"></div>
+
+                        <!-- Resposta e explicação -->
+                        <div
+                            class="feedback hidden"
+                            id="feedback"
+                            aria-live="polite"
+                        ></div>
+
+                        <!-- Próxima pergunta -->
+                        <button class="btn hidden" id="next">
+                            Próxima pergunta →
+                        </button>
+
+                    </div>
+
+
+                    <!-- 4.3 Resultado final -->
+
+                    <div id="finish" class="hidden">
+
+                        <div class="eyebrow">
+                            Desafio concluído
+                        </div>
+
+                        <h2 id="finalTitle"></h2>
+
+                        <p id="finalText"></p>
+
+                        <div class="buttons">
+
+                            <a href="#ranking" class="btn">
+                                Ver ranking ↓
+                            </a>
+
+                            <button
+                                class="btn secondary"
+                                id="again"
+                            >
+                                Nova equipe
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================================
+             5. RANKING DAS EQUIPES
+        ======================================== -->
+
+        <section class="muted" id="ranking">
+            <div class="wrap">
+
+                <div class="eyebrow">
+                    Competição
+                </div>
+
+                <h2>Ranking das equipes</h2>
+
+                <p>
+                    Confira quem está na frente.
+
+                    Em caso de empate, vence quem acertou mais
+                    perguntas e depois quem concluiu em menos tempo.
+                </p>
+
+                <!-- Tabela de classificação -->
+
+                <div style="overflow-x: auto;">
+
+                    <table class="ranktable">
+
+                        <thead>
+                            <tr>
+                                <th>Posição</th>
+                                <th>Equipe</th>
+                                <th>Acertos</th>
+                                <th>Pontos</th>
+                                <th>Tempo</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="rankingRows">
+                            <!-- Preenchido pelo JavaScript -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <p style="font-size: 13px;">
+                    Ranking compartilhado.
+                    Atualização automática a cada 5 segundos.
+                </p>
+
+
+                <!-- ========================================
+                     5.1 PAINEL DO ORGANIZADOR
+                ======================================== -->
+
+                <div class="gamebox" style="margin-top: 20px;">
+
+                    <h3>Área do organizador</h3>
+
+                    <p>
+                        Inicie ou encerre a competição com a senha
+                        definida no banco de dados.
+                    </p>
+
+                    <div class="field">
+
+                        <label for="adminPass">
+                            Senha do organizador
+                        </label>
+
+                        <input
+                            type="password"
+                            id="adminPass"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                    <div class="buttons">
+
+                        <button class="btn" id="openGame">
+                            Liberar jogo
+                        </button>
+
+                        <button
+                            class="btn secondary"
+                            id="closeGame"
+                        >
+                            Encerrar jogo
+                        </button>
+
+                    </div>
+
+                    <p id="adminMsg" role="status"></p>
+
+                    <p id="gameStatus"></p>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ========================================
+             6. SOBRE NOSSA EQUIPE
+        ======================================== -->
+
+        <section id="equipe">
+            <div class="wrap">
+
+                <div class="eyebrow">
+                    Quem somos
+                </div>
+
+                <h2>Conheça a Equipe</h2>
+
+                <p>
+                    Somos estudantes envolvidos em um projeto de extensão
+                    sobre <strong>
+                        “Tecnologia e Meio Ambiente: O Custo da Era Digital”
+                    </strong>.
+
+                    Nosso objetivo é conversar com a comunidade escolar
+                    sobre os impactos ambientais do mundo digital e
+                    mostrar atitudes que podem fazer diferença no dia a dia.
+                </p>
+
+                <p>
+                    Preparamos uma apresentação sobre data centers,
+                    obsolescência, lixo eletrônico em Maceió e os 5Rs.
+
+                    Criamos este site e o jogo para transformar esses
+                    assuntos em uma atividade participativa, na qual
+                    os alunos aprendem enquanto competem de forma saudável.
+                </p>
+
+                <div class="notice">
+                    Projeto de Extensão:<br>
+                    Tecnologia e Meio Ambiente: O Custo da Era Digital <br>
+                    Victor F. Laurindo <br>
+                    Matheus de Souza Castro <br>
+                    João Pedro T. Batista <br>
+                    Luiz Ricardo Dos Santos Antero.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ========================================
+         7. RODAPÉ
+    ======================================== -->
+
+    <footer>
+        <div class="wrap">
+
+            TI Verde · Projeto de Extensão ·
+            Conteúdo educativo ·
+        </div>
+    </footer>
+
+
+    <!-- ========================================
+         JAVASCRIPT
+    ======================================== -->
+
+    <script src="assets/js/app.js" defer></script>
+
+</body>
+</html>

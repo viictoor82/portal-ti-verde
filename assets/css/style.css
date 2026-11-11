@@ -1,0 +1,578 @@
+/* ========================================
+   1. CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+    color: #eaf8ef;
+    background: #071a16;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ========================================
+   2. CABEÇALHO E NAVEGAÇÃO
+======================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: #09231edc;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #ffffff20;
+}
+
+/* Container da navegação */
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 22px;
+    gap: 16px;
+}
+
+/* Nome do projeto */
+
+.brand {
+    font-weight: 850;
+    letter-spacing: .04em;
+    color: #80efb2;
+}
+
+/* Links do menu */
+
+.navlinks {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.navlinks a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #d1e7dc;
+}
+
+
+/* ========================================
+   3. CONTAINERS E ESTRUTURA
+======================================== */
+
+.wrap {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 22px;
+}
+
+section {
+    padding: 75px 0;
+}
+
+/* Seções com fundo alternativo */
+
+.muted {
+    background: #0c251e;
+}
+
+
+/* ========================================
+   4. PÁGINA INICIAL (HERO)
+======================================== */
+
+.hero {
+    padding: 95px 0 90px;
+
+    background:
+        radial-gradient(
+            ellipse at 80% 20%,
+            #1c674e 0,
+            transparent 48%
+        ),
+        linear-gradient(
+            150deg,
+            #0d342a,
+            #071a16
+        );
+}
+
+/* Texto pequeno acima do título */
+
+.eyebrow {
+    color: #82e9ac;
+    font-weight: 800;
+    letter-spacing: .13em;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   5. TIPOGRAFIA
+======================================== */
+
+/* Título principal */
+
+h1 {
+    font-size: clamp(39px, 6vw, 76px);
+    line-height: 1.05;
+    max-width: 800px;
+    margin: 16px 0 22px;
+    letter-spacing: -.045em;
+}
+
+/* Títulos das seções */
+
+h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: -.03em;
+    margin: 12px 0 18px;
+}
+
+/* Subtítulos */
+
+h3 {
+    margin: 0 0 9px;
+    font-size: 19px;
+}
+
+/* Parágrafos */
+
+p {
+    line-height: 1.75;
+    color: #c5dcd1;
+}
+
+/* Texto de apresentação */
+
+.lead {
+    font-size: 19px;
+    max-width: 670px;
+}
+
+
+/* ========================================
+   6. BOTÕES
+======================================== */
+
+/* Botão principal */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    background: #7aefad;
+    color: #08261a;
+
+    border: 0;
+    border-radius: 12px;
+
+    padding: 14px 22px;
+
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+/* Botão secundário */
+
+.btn.secondary {
+    background: #183e32;
+    color: #e8ffef;
+    border: 1px solid #43715c;
+}
+
+/* Grupo de botões */
+
+.buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+
+/* ========================================
+   7. CARDS EDUCATIVOS
+======================================== */
+
+/* Grade dos cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 26px;
+}
+
+/* Card individual */
+
+.card {
+    background: #12372b;
+    border: 1px solid #295441;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+/* Identificação do card */
+
+.tag {
+    color: #86efb4;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: .08em;
+}
+
+
+/* ========================================
+   8. PONTOS DE COLETA
+======================================== */
+
+/* Grade dos locais */
+
+.locations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 24px;
+}
+
+/* Card do ponto de coleta */
+
+.location {
+    background: #12372b;
+    border: 1px solid #2a5543;
+    border-radius: 14px;
+    padding: 18px;
+}
+
+/* Nome do local */
+
+.location strong {
+    display: block;
+    margin-bottom: 7px;
+}
+
+/* Endereço e informações */
+
+.location small {
+    color: #c6d9ce;
+    line-height: 1.5;
+}
+
+/* Link para localização */
+
+.location a {
+    display: inline-block;
+    margin-top: 11px;
+    color: #87edb1;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   9. AVISOS E INFORMAÇÕES
+======================================== */
+
+.notice {
+    padding: 16px 18px;
+
+    background: #173a30;
+    border-left: 3px solid #8ff0b9;
+    border-radius: 8px;
+
+    color: #d3e8dd;
+    line-height: 1.6;
+
+    margin-top: 20px;
+}
+
+
+/* ========================================
+   10. JOGO - MISSÃO TI VERDE
+======================================== */
+
+/* Container principal do jogo */
+
+.gamebox {
+    background: #103528;
+    border: 1px solid #367453;
+    border-radius: 24px;
+
+    padding: clamp(20px, 4vw, 36px);
+
+    max-width: 790px;
+    margin: 26px auto;
+}
+
+
+/* ========================================
+   10.1 CAMPOS DE ENTRADA
+======================================== */
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin: 18px 0;
+}
+
+/* Rótulos */
+
+label {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* Campos de texto e senha */
+
+input {
+    background: #08231b;
+    border: 1px solid #4c7b61;
+    border-radius: 11px;
+
+    padding: 14px;
+
+    color: #fff;
+    font-size: 16px;
+    width: 100%;
+}
+
+
+/* ========================================
+   10.2 PERGUNTAS E ALTERNATIVAS
+======================================== */
+
+/* Texto da pergunta */
+
+.question {
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+/* Container das alternativas */
+
+.options {
+    display: grid;
+    gap: 10px;
+    margin: 22px 0;
+}
+
+/* Alternativa padrão */
+
+.option {
+    background: #1b4937;
+    color: #fff;
+
+    border: 1px solid #42775b;
+    border-radius: 12px;
+
+    text-align: left;
+    padding: 15px;
+
+    cursor: pointer;
+    font-size: 15px;
+}
+
+/* Efeito ao passar o mouse */
+
+.option:hover:not(:disabled) {
+    background: #2b624a;
+}
+
+/* Alternativa desabilitada */
+
+.option:disabled {
+    cursor: default;
+}
+
+/* Resposta correta */
+
+.option.correct {
+    background: #176b45;
+    border-color: #82e9ac;
+}
+
+/* Resposta incorreta */
+
+.option.wrong {
+    background: #703c3c;
+    border-color: #f59d9d;
+}
+
+
+/* ========================================
+   10.3 CRONÔMETRO E PONTUAÇÃO
+======================================== */
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    color: #b7e5c9;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   10.4 BARRA DE PROGRESSO
+======================================== */
+
+/* Fundo da barra */
+
+.bar {
+    height: 7px;
+    background: #203e43;
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 15px 0 23px;
+}
+
+/* Preenchimento da barra */
+
+.bar > div {
+    height: 100%;
+    background: #8aefb4;
+    transition: width .2s;
+}
+
+
+/* ========================================
+   10.5 FEEDBACK DAS RESPOSTAS
+======================================== */
+
+.feedback {
+    padding: 16px;
+    border-radius: 12px;
+    background: #22605f;
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+/* Ocultar elementos */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ========================================
+   11. RANKING DAS EQUIPES
+======================================== */
+
+/* Tabela principal */
+
+.ranktable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Células e cabeçalho */
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #355947;
+}
+
+/* Títulos das colunas */
+
+th {
+    color: #86eeb3;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   12. RODAPÉ
+======================================== */
+
+footer {
+    border-top: 1px solid #315340;
+    padding: 28px 0;
+
+    color: #b7d3c4;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   13. ACESSIBILIDADE
+======================================== */
+
+/* Destaque ao navegar com teclado */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #f7e690;
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   14. RESPONSIVIDADE - CELULARES
+======================================== */
+
+@media (max-width: 720px) {
+
+    /* Cards em uma coluna */
+
+    .cards,
+    .locations {
+        grid-template-columns: 1fr;
+    }
+
+    /* Menu vertical */
+
+    .nav {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    /* Reduzir espaçamento inicial */
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    /* Espaçamento entre links */
+
+    .navlinks {
+        gap: 12px;
+    }
+
+    /* Reduzir espaçamento das seções */
+
+    section {
+        padding: 54px 0;
+    }
+
+}
